@@ -24,11 +24,13 @@ class TestStringsEnds(unittest.TestCase):
     print("True Cases")
     def test_true_case(self):
         for text, ending in fixed_tests_True:
-            self.assertEqual(solution(text, ending), True)
+            with self.subTest(text = text, ending = ending):
+                self.assertEqual(solution(text, ending), True)
     print("False Cases")
     def test_false_case(self):
         for text, ending in fixed_tests_False:
-            self.assertEqual(solution(text, ending), False)
+            with self.subTest(text = text, ending = ending):
+                self.assertEqual(solution(text, ending), False)
 
 if __name__ == '__main__':
     unittest.main()
